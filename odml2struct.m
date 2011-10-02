@@ -6,11 +6,11 @@ function [s, reader] = odml2Struct(file)
 % by Jan Grewe 2009
 % (this software is open source.
 % it comes 'at it is' with absolutely no warrenty!)
+
 if(~file(end-3:end)=='.xml')
     error('can not handle this file');
 end
-import odml.core.*
-import odml.xtra.*
+
 try
     reader = Reader(file);
 catch
