@@ -30,5 +30,19 @@ Place all files in a directory and include it in the Matlab search path.
 Run the odmlConfig.m script that will add all necessary libraries to the 
 matlab java - classpath.
 
-In case you use an older version of MAtlab that does not come with the jdom library 
+In case you use an older version of Matlab that does not come with the jdom library 
 uncomment the marked lines in the odmlConfig script.
+
+
+Getting started
+-------------------------------------------------------------------------
+The tutorial.m file that is part of this package demonstrates some basic
+commands.
+
+
+Getting help
+-------------------------------------------------------------------------
+For more information about odml check the project website www.g-node.org/odml.
+
+The Matlab odml package uses the odml java library. Javadoc API documentation
+can be found here: portal.g-node.org/odml/doc/java
