@@ -1,16 +1,14 @@
-function [struct, reader] = odml2Struct(file)
-% odml2Struct converts odML-metadata to matlab struct.
+function [struct, reader] = odml2struct(file)
+% odml2struct converts odML-metadata to matlab struct.
 % function calls:
-%   odml2Struct(filename): converts the odml file
+%   odml2struct(filename): converts the odml file passed as argument to a 
+%                          a matlab structure.
+%   Method returns the structure and the Reader instance used.
 %
 % by Jan Grewe 2009
 % (this software is open source.
 % it comes 'at it is' with absolutely no warrenty!)
 import odml.core.*
-
-if(~file(end-3:end) == '.xml')
-    error('can not handle this file');
-end
 
 try
     reader = Reader();
@@ -19,12 +17,10 @@ catch
     error(['an error occurred reading file: ' file]);
 end
 
-struct = []
+struct = [];
 for i = 0 : s.sectionCount()-1
-    sub = [];
     sub = section2struct(s.getSection(i));
     sectionName = s.getSection(i).getName().toCharArray';
-%     sectionName(find(sectionName==' '))=[];
     sectionName = strrep(sectionName, ' ', '_');
     try
         cmd= ['struct.' sectionName '= sub;'];
