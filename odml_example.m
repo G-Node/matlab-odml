@@ -37,7 +37,7 @@ odml = {
     '  </section>'
     '</odML>'
     };
-
+disp(pwd)
 file_id = fopen(odml_file_name, 'w');
 fprintf(file_id, join(odml));
 fclose(file_id);
